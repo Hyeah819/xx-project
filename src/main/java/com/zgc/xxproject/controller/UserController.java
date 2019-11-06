@@ -7,14 +7,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 @Controller
+
 public class UserController {
 
     @Autowired
     private UserMapper userMapper;
-
+    @Autowired
+    private DataSource dataSource;
     @RequestMapping("/queryUserList")
     @ResponseBody
     public List<User> queryUserList(){
